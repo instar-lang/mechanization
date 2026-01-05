@@ -1,0 +1,6 @@
+import Instar.TwoLevelBasic.LogicalEquiv.LogicalRelation
+import Instar.TwoLevelBasic.LogicalEquiv.Compatibility
+import Instar.TwoLevelBasic.LogicalEquiv.Fundamental
+import Instar.TwoLevelBasic.LogicalEquiv.Transitivity
+import Instar.TwoLevelBasic.LogicalEquiv.Soundness
+import Instar.TwoLevelBasic.LogicalEquiv.Completeness

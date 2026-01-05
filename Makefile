@@ -1,15 +1,15 @@
 .DEFAULT_GOAL := all
 
 basic:
-	lake build CollapsingTowers.TwoLevelBasic.Defs
+	lake build Instar.TwoLevelBasic.Defs
 
 rec:
-	lake build CollapsingTowers.TwoLevelRec.Defs
+	lake build Instar.TwoLevelRec.Defs
 
 mut:
-	lake build CollapsingTowers.TwoLevelMut.Defs
+	lake build Instar.TwoLevelMut.Defs
 
 final:
-	lake build CollapsingTowers.TwoLevelFinal.Defs
+	lake build Instar.TwoLevelFinal.Defs
 
 all: basic rec mut final

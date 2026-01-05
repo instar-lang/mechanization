@@ -1,8 +1,0 @@
-import CollapsingTowers.TwoLevelRec.Syntax.Basic
-import CollapsingTowers.TwoLevelRec.Syntax.Transform
-import CollapsingTowers.TwoLevelRec.Syntax.Fv
-import CollapsingTowers.TwoLevelRec.Syntax.LocallyNameless
-import CollapsingTowers.TwoLevelRec.Syntax.Grounded
-import CollapsingTowers.TwoLevelRec.Syntax.Identity
-import CollapsingTowers.TwoLevelRec.Syntax.Commutativity
-import CollapsingTowers.TwoLevelRec.Syntax.Intro

@@ -1,12 +1,12 @@
-name = "collapsing-towers"
+name = "instar-mechanization"
 version = "0.1.0"
-defaultTargets = ["collapsing-towers"]
+defaultTargets = ["instar-mechanization"]
 
 [[lean_lib]]
-name = "CollapsingTowers"
+name = "Instar"
 
 [[lean_exe]]
-name = "collapsing-towers"
+name = "instar-mechanization"
 root = "Main"
 
 [[require]]

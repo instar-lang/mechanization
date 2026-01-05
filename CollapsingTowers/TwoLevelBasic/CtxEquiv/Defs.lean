@@ -1,2 +1,0 @@
-import CollapsingTowers.TwoLevelBasic.CtxEquiv.ObsCtx
-import CollapsingTowers.TwoLevelBasic.CtxEquiv.Transitivity

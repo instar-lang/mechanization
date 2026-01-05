@@ -1,9 +1,0 @@
-import CollapsingTowers.TwoLevelFinal.Utils.Defs
-import CollapsingTowers.TwoLevelFinal.Syntax.Defs
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Defs
-import CollapsingTowers.TwoLevelFinal.SyntacticTyping.Defs
-import CollapsingTowers.TwoLevelFinal.SyntacticSoundness.Defs
-import CollapsingTowers.TwoLevelFinal.CtxEquiv.Defs
-import CollapsingTowers.TwoLevelFinal.LogicalEquiv.Defs
-import CollapsingTowers.TwoLevelFinal.SemanticsPreservation.Defs
-import CollapsingTowers.TwoLevelFinal.Examples.Defs

@@ -1,9 +1,0 @@
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Value
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Store
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.EvalCtx
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.SmallStep
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Congruence
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Deterministic
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Confluence
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Refine
-import CollapsingTowers.TwoLevelFinal.OperationalSemantics.Termination
