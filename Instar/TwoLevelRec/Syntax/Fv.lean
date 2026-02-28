@@ -1,4 +1,4 @@
-import Mathlib.Data.Set.Insert
+import Mathlib.Order.BooleanAlgebra.Set
 import Instar.TwoLevelRec.Syntax.Transform
 
 @[simp]
@@ -74,7 +74,7 @@ lemma fv.under_closing : ∀ i x e, fv (closing i x e) = fv e \ { x } :=
   | fvar y =>
     by_cases HEq : x = y
     . simp [if_pos HEq]
-      simp [HEq]
+      simp [HEq]; rfl
     . simp [if_neg HEq]
       rw [Set.diff_singleton_eq_self]
       simp; apply HEq

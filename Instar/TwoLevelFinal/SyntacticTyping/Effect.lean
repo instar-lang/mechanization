@@ -46,6 +46,9 @@ def Effect.le : Effect → Effect → Prop
 @[simp]
 instance : LE Effect where le := Effect.le
 
+@[simp]
+lemma Effect.le_eq (x y : Effect) : (x ≤ y) = Effect.le x y := rfl
+
 instance : Preorder Effect where
   le_refl := by intro x; cases x <;> simp
   le_trans := by intros x y z; cases x <;> cases y <;> cases z <;> simp
@@ -55,4 +58,3 @@ instance : PartialOrder Effect where
   le_antisymm := by
     intros x y
     cases x <;> cases y <;> simp
-    all_goals intro _ _; contradiction
