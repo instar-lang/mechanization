@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.Defs
 
+namespace Rec
+
 inductive value : Expr → Prop where
   | lam : ∀ e, lc (.lam e) → value (.lam e)
   | lit : ∀ n, value (.lit n)
@@ -95,3 +97,5 @@ instance value.decidable (e : Expr) : Decidable (value e) :=
   | .fix₂ _ => isFalse (by intros Hvalue; nomatch Hvalue)
   | .ifz₁ _ _ _ => isFalse (by intros Hvalue; nomatch Hvalue)
   | .ifz₂ _ _ _ => isFalse (by intros Hvalue; nomatch Hvalue)
+
+end Rec

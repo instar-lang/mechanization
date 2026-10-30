@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.OperationalSemantics.SmallStep
 
+namespace Rec
+
 @[pp_using_anonymous_constructor]
 structure HeadStepable (e : Expr) where
   mk ::
@@ -545,3 +547,5 @@ theorem deterministic :
       have ⟨HEqr, HEqP, HEqE⟩ := deterministic.under_ctxℙ _ _ _ _ _ _ _ HPl HPr HEl HEr HEq Hstepablel Hstepabler
       simp at HEqr
       simp [HEqr, HEqP, HEqE]
+
+end Rec

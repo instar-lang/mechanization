@@ -2,6 +2,8 @@ import Instar.TwoLevelRec.Syntax.Defs
 import Instar.TwoLevelRec.SyntacticTyping.Env
 import Instar.TwoLevelRec.OperationalSemantics.Defs
 
+namespace Rec
+
 mutual
   inductive typing : TEnv → Stage → Expr → Ty → Effect → Prop where
     | fvar : ∀ Γ 𝕊 x τ,
@@ -295,3 +297,5 @@ lemma typing_diverge : typing ⦰ 𝟚 diverge .nat ⊥ :=
   apply typing.app₁
   apply typing.fix₁; simp; rfl; apply Hf
   repeat constructor
+
+end Rec

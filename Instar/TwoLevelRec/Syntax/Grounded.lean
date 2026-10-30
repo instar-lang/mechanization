@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.Transform
 
+namespace Rec
+
 @[simp]
 def grounded (e : Expr) : Prop :=
   match e with
@@ -158,3 +160,5 @@ lemma grounded.under_opening_value : ∀ e v i, grounded v → grounded e → gr
     apply IH₀; apply Hv; apply H₀; constructor
     apply IH₁; apply Hv; apply H₁
     apply IH₂; apply Hv; apply H₂
+
+end Rec

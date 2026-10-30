@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.Defs
 
+namespace Rec
+
 -- value v
 -- —————————————
 -- value γ₀(‖v‖)
@@ -628,3 +630,5 @@ theorem semantics_preservation.pure.head :
     . apply log_approx.fundamental
       apply typing.erase.safety
       apply Hτ₁
+
+end Rec

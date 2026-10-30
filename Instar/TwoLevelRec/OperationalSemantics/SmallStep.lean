@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.OperationalSemantics.EvalCtx
 
+namespace Rec
+
 inductive head : Expr → Expr → Prop where
   | lets : ∀ e v, value v → head (.lets v e) (opening 0 v e)
   | app₁ : ∀ e v, value v → head (.app₁ (.lam e) v) (opening 0 v e)
@@ -149,3 +151,5 @@ lemma grounded.under_stepn : ∀ e₀ e₁, (e₀ ⇝* e₁) → grounded e₀ �
   case multi H _ IH =>
     apply IH; apply grounded.under_step
     apply H; apply HG
+
+end Rec

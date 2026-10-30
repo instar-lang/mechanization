@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.CtxEquiv.ObsCtx
 
+namespace Rec
+
 -- Γ ⊧ e₀ ≤𝑐𝑡𝑥 e₁ : τ
 -- Γ ⊧ e₁ ≤𝑐𝑡𝑥 e₂ : τ
 -- ——————————————————
@@ -34,3 +36,5 @@ theorem ctx_equiv.trans :
   constructor
   . apply ctx_approx.trans _ _ _ _ _ Hctx₀.left Hctx₁.left
   . apply ctx_approx.trans _ _ _ _ _ Hctx₁.right Hctx₀.right
+
+end Rec

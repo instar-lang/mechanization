@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.Compatibility
 
+namespace Rec
+
 -- Γ ⊢ e : τ
 -- ————————————————
 -- Γ ⊧ e ≤𝑙𝑜𝑔 e : τ
@@ -130,3 +132,5 @@ lemma log_approx_env.refl :
     . apply log_approx_value.refl
       apply Hvalue; apply Hτ
     . apply IH
+
+end Rec

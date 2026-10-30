@@ -1,5 +1,7 @@
 import Mathlib.Order.Basic
 
+namespace Rec
+
 inductive Effect : Type where
   | pure
   | reify
@@ -58,3 +60,5 @@ instance : PartialOrder Effect where
   le_antisymm := by
     intros x y
     cases x <;> cases y <;> simp
+
+end Rec

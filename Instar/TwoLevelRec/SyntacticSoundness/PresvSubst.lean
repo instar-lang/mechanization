@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Defs
 
+namespace Rec
+
 lemma preservation.dynamic_subst.strengthened :
   ∀ Γ Δ Φ v e τ𝕒 τ𝕓 φ,
     typing Γ 𝟚 e τ𝕓 φ →
@@ -343,3 +345,5 @@ theorem preservation.subst :
   apply closed.under_subst
   apply closed.inc; apply typing.closed_at_env; apply Hτv; omega
   rw [← List.length_cons]; apply typing.closed_at_env; apply Hτe
+
+end Rec

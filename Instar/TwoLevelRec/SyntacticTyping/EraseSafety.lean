@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Typing
 
+namespace Rec
+
 -- Γ ⊢ e : τ
 -- ————————————————
 -- ‖Γ‖ ⊢ ‖e‖ : ‖τ‖
@@ -107,3 +109,5 @@ theorem typing_reification.erase.safety : ∀ Γ e τ φ, typing_reification Γ 
   cases Hτ
   all_goals next Hτ =>
     apply typing.erase.safety _ _ _ _ _ Hτ
+
+end Rec

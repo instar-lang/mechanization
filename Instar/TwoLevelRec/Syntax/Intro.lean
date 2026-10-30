@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.LocallyNameless
 
+namespace Rec
+
 lemma intro.codify : ∀ x e i, closed_at e x → ({i ↤ x} subst x (.code (.fvar x)) ({i ↦ x} e)) = codify i e :=
   by
   intros x e i Hclosed
@@ -72,3 +74,5 @@ lemma intro.subst : ∀ x e v i, closed_at e x → subst x v (opening i (.fvar x
     apply IH₀; apply Hclosed.left; constructor
     apply IH₁; apply Hclosed.right.left
     apply IH₂; apply Hclosed.right.right
+
+end Rec

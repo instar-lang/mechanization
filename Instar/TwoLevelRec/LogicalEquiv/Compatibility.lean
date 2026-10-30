@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.LogicalRelation
 
+namespace Rec
+
 -- Γ ⊧ x ≤𝑙𝑜𝑔 x : Γ(x)
 lemma compatibility.fvar :
   ∀ Γ x τ,
@@ -802,3 +804,5 @@ lemma compatibility.ifz₁ :
       apply head.ifz₁_else
     . apply log_approx_value.antimono
       apply Hsem_value; omega
+
+end Rec

@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.Syntax.Defs
 import Instar.TwoLevelRec.OperationalSemantics.Value
 
+namespace Rec
+
 abbrev Ctx :=
   Expr → Expr
 
@@ -507,3 +509,5 @@ lemma rewrite.ctxℙ_ctx𝕄 :
   case hole => apply ctx𝕄.hole
   case consℚ HQ =>
     apply rewrite.ctxℚ_ctx𝕄 _ _ HQ
+
+end Rec

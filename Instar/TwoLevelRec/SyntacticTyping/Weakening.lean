@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Typing
 
+namespace Rec
+
 lemma fvar.weakening :
   ∀ (Ψ Δ Φ : TEnv) 𝕊 x τ,
     binds x (τ, 𝕊) (Ψ ++ Φ) →
@@ -188,3 +190,5 @@ theorem typing_reification.weakening :
   case reify Hτ =>
     apply typing_reification.reify
     apply typing.weakening _ _ _ _ _ _ Hτ
+
+end Rec

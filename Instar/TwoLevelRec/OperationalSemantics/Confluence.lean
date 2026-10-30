@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.OperationalSemantics.Deterministic
 
+namespace Rec
+
 lemma value_ctx𝕄_impl_ctx_is_hole : ∀ lvl M e, ctx𝕄 lvl M → value M⟦e⟧ → M = id :=
   by
   intros lvl M e HM Hvalue
@@ -129,3 +131,5 @@ theorem stepn_indexed.unique_normal_forms :
   have ⟨HEqv₁, HEqz₁⟩:= stepn_indexed.value_impl_termination _ _ _ Hvalue₁ Hstep₁
   simp [HEqv₀, HEqv₁]
   omega
+
+end Rec

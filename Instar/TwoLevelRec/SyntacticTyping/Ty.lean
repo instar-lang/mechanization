@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Effect
 
+namespace Rec
+
 inductive Ty : Type where
   | nat
   | arrow (τ𝕒 : Ty) (τ𝕓 : Ty) (φ : Effect)
@@ -78,3 +80,5 @@ lemma grounded_ty_iff_erase_identity : ∀ τ, wbt 𝟚 τ ↔ erase_ty τ = τ 
     . intros H; simp [H]
   case fragment => simp; apply erasable.fragment
   case rep => simp; apply erasable.rep
+
+end Rec

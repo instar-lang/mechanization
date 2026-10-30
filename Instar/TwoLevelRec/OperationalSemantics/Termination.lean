@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.OperationalSemantics.Refine
 
+namespace Rec
+
 -- e₁⇓ ≜ ∃ v, e ⇝* v
 @[simp]
 def termination (e : Expr) : Prop :=
@@ -121,3 +123,5 @@ theorem divergence : ¬termination diverge :=
     apply stepn_indexed.multi _ _ _ _ Hstep₃
     apply stepn_indexed.refl
   nomatch termination.refl _ _ Hstepn Htermination
+
+end Rec
