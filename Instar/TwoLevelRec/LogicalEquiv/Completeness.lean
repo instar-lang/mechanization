@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.CtxEquiv.Defs
 import Instar.TwoLevelRec.LogicalEquiv.Fundamental
 
+namespace Rec
+
 -- Γ ⊧ e₀ ≤𝑐𝑖𝑢 e₁ : τ ≜
 --   Γ ⊢ e₀ : τ ∧
 --   Γ ⊢ e₁ : τ ∧
@@ -478,3 +480,5 @@ theorem log_approx.completeness :
   apply ciu_approx_impl_log_approx
   apply ctx_approx_impl_ciu_approx
   apply Hctx
+
+end Rec

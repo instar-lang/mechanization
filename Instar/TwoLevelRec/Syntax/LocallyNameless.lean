@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.Syntax.Transform
 import Instar.TwoLevelRec.Syntax.Fv
 
+namespace Rec
+
 -- closedness condition for free variables
 @[simp]
 def closed_at (e : Expr) (x : ℕ) : Prop :=
@@ -727,3 +729,12 @@ lemma lc.under_erase : ∀ e i, lc_at e i ↔ lc_at ‖e‖ i :=
   | ifz₁ _ _ _ IH₀ IH₁ IH₂
   | ifz₂ _ _ _ IH₀ IH₁ IH₂ =>
     simp [IH₀, IH₁, IH₂]
+
+@[simp]
+lemma erasure_opening_commute : ∀ e i x, ‖{i ↦ x} e‖ = {i ↦ x} ‖e‖ :=
+  by
+  intro e
+  induction e <;> intro i x <;> simp_all
+  case bvar => split_ifs <;> simp
+
+end Rec

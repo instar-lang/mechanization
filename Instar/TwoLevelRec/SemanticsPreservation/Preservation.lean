@@ -2,6 +2,8 @@ import Instar.TwoLevelRec.SemanticsPreservation.PresvCtx
 import Instar.TwoLevelRec.SemanticsPreservation.PresvPure
 import Instar.TwoLevelRec.SemanticsPreservation.PresvReflect
 
+namespace Rec
+
 -- e₀ ⇝ e₁ (under Γ)
 -- Γ ⊢ e₀ : τ
 -- ——————————————————————————
@@ -121,3 +123,5 @@ theorem semantics_preservation.stepn.rep :
   constructor; rfl
   rw [← (grounded_iff_erase_identity e₁).mp HGe₁, ← (grounded_ty_iff_erase_identity _).mp Hwbt]
   apply semantics_preservation.stepn _ _ _ _ Hstepn Hτr₀
+
+end Rec

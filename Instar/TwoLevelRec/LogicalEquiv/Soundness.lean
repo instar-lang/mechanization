@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.LogicalEquiv.Fundamental
 import Instar.TwoLevelRec.CtxEquiv.Defs
 
+namespace Rec
+
 lemma log_approx.congruence_under_ObsCtx𝔹 :
   ∀ Δ Γ τδ τγ B e₀ e₁,
     log_approx Δ e₀ e₁ τδ →
@@ -131,3 +133,5 @@ theorem log_equiv.soundness :
   constructor
   . apply log_approx.soundness _ _ _ _ Hsem.left
   . apply log_approx.soundness _ _ _ _ Hsem.right
+
+end Rec

@@ -2,6 +2,8 @@ import Instar.TwoLevelRec.SyntacticSoundness.PresvCtx
 import Instar.TwoLevelRec.SyntacticSoundness.PresvSubst
 import Instar.TwoLevelRec.SyntacticSoundness.PresvMaping
 
+namespace Rec
+
 lemma typing.escape.strengthened :
   ∀ Γ e τ φ,
     typing Γ 𝟚 e τ φ →
@@ -268,3 +270,5 @@ theorem preservation.pure :
       have ⟨φ₂, Hτ, HLeφ⟩ := IH _ _ _ Hτ HEqΓ
       have Hτ := IHτR _ _ Hfv (typing_reification.reify _ _ _ _ Hτ)
       exists φ₀
+
+end Rec

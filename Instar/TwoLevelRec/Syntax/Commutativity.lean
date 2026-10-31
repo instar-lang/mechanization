@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.Identity
 
+namespace Rec
+
 lemma comm.subst_opening : ∀ x y v e i, x ≠ y → lc v → subst x v ({i ↦ y} e) = ({i ↦ y} subst x v e) :=
   by
   intro x y v e i HNe Hlc
@@ -301,3 +303,5 @@ lemma comm.msubst_subst : ∀ x γ v e, x ≥ γ.length → closed v → mwf γ 
     rw [msubst, msubst, IH, comm.subst_subst]
     omega; apply Hclose; apply Hγ.left.right
     omega; apply Hγ.right
+
+end Rec

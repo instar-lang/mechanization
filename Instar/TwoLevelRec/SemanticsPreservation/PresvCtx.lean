@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.Defs
 
+namespace Rec
+
 -- Γ ⊢ e₀ : τ →
 -- ‖Γ‖ ⊨ ‖e₀‖ ≈𝑙𝑜𝑔 ‖e₁‖ : ‖τ‖
 -- ———————————————————————————————
@@ -241,3 +243,5 @@ lemma semantics_preservation.under_ctxℝ :
         . apply log_approx.fundamental
           apply typing_reification.erase.safety _ _ _ _ Hl
         . assumption
+
+end Rec

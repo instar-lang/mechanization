@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticSoundness.PresvCtx
 
+namespace Rec
+
 theorem preservation.reflect.head :
   ∀ Γ E e τ φ,
     ctx𝔼 E →
@@ -77,3 +79,5 @@ theorem preservation.reflect :
     case reify Hτ =>
       have Hτ := IH _ _ _ Hτ HEqΓ
       apply IHτR _ _ Hfv (typing_reification.reify _ _ _ _ Hτ)
+
+end Rec

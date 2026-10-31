@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.SyntacticTyping.Defs
 import Instar.TwoLevelRec.OperationalSemantics.Defs
 
+namespace Rec
+
 @[simp]
 def dyn_env (Γ : TEnv) : Prop :=
   ∀ x τ 𝕊, binds x (τ, 𝕊) Γ → 𝕊 = 𝟚
@@ -302,3 +304,5 @@ theorem progress :
   by
   intros _ _ _ Hτ
   apply progress.strengthened ⦰ _ _ _ Hτ (by simp)
+
+end Rec

@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.OperationalSemantics.Confluence
 import Instar.TwoLevelRec.OperationalSemantics.Congruence
 
+namespace Rec
+
 -- B⟦e₀⟧ ⇝ r
 -- ———————————————————————
 -- B⟦e₀⟧ ⇝ B⟦e₁⟧ ∧ e₀ ⇝ e₁
@@ -367,3 +369,5 @@ lemma stepn_indexed.refine.ifz₁_else.eliminator :
   exists i
   constructor; omega
   rw [HEqv]; apply Hstepr
+
+end Rec

@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.SyntacticTyping.Ty
 import Instar.TwoLevelRec.Utils.Defs
 
+namespace Rec
+
 abbrev TEnv :=
   List (Ty × Stage)
 
@@ -57,3 +59,5 @@ lemma escape_env.binds : ∀ Γ x τ 𝕊, binds x (τ, 𝕊) Γ → binds x (τ
       intros; assumption
     . simp [if_neg HEq, ← escape_env.length]
       apply IH
+
+end Rec

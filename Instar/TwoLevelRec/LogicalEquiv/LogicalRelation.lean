@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticSoundness.Defs
 
+namespace Rec
+
 mutual
 @[simp]
 def log_approx_value : ℕ → Expr → Expr → Ty → Prop
@@ -262,3 +264,5 @@ lemma typing.subst.length :
   induction Hτγ
   case nil => simp
   case cons IH => simp [IH]
+
+end Rec

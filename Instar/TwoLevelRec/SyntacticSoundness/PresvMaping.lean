@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Defs
 
+namespace Rec
+
 lemma preservation.maping.strengthened :
   ∀ Γ Δ Φ v e τ𝕒 τ𝕓 τ𝕔 𝕊𝕒 𝕊𝕓 φ,
     typing Γ 𝕊𝕓 e τ𝕓 φ →
@@ -208,3 +210,5 @@ theorem preservation.maping :
   by
   intros Γ v e τ𝕒 τ𝕓 τ𝕔 𝕊 φ Hτe Hτv
   apply preservation.maping.strengthened _ ⦰ _ _ _ _ _ _ _ _ _ Hτe rfl Hτv
+
+end Rec

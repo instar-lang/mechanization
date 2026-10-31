@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.SyntacticSoundness.PresvPure
 import Instar.TwoLevelRec.SyntacticSoundness.PresvReflect
 
+namespace Rec
+
 theorem preservation.strengthened :
   ∀ Γ e₀ e₁ τ φ₀,
     step_lvl Γ.length e₀ e₁ →
@@ -87,3 +89,5 @@ theorem preservation.dynamic :
   cases φ <;> simp at Hφ
   have Hτ := typing_reification.erase.safety _ _ _ _ Hτ
   apply Hτ
+
+end Rec

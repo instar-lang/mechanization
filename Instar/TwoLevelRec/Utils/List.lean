@@ -1,5 +1,7 @@
 import Mathlib.Data.Nat.Basic
 
+namespace Rec
+
 @[simp]
 def getr {α : Type} (x : ℕ) (l : List α) : Option α :=
   match l with
@@ -77,3 +79,5 @@ lemma binds.shrinkr : ∀ {α : Type} Γ Δ x (a : α), binds (x + Δ.length) a 
     . repeat rw [if_pos HEq]; simp
     . repeat rw [if_neg HEq]
       apply IHtails
+
+end Rec

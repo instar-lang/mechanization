@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.Fundamental
 
+namespace Rec
+
 mutual
 lemma log_approx_value.trans
   (k : Nat) (v₀ v₁ v₂ : Expr) (τ : Ty) :
@@ -112,3 +114,5 @@ theorem log_equiv.trans :
     apply Hl₀; apply Hl₁
   . apply log_approx.trans
     apply Hr₁; apply Hr₀
+
+end Rec

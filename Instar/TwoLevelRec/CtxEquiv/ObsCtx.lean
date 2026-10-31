@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.OperationalSemantics.Defs
 import Instar.TwoLevelRec.SyntacticTyping.Defs
 
+namespace Rec
+
 inductive ObsCtx𝔹 : TEnv → Ty → Ctx → TEnv → Ty → Prop where
   | lam :
     ∀ Γ τ𝕒 τ𝕓,
@@ -216,3 +218,5 @@ lemma ctx_approx.congruence_under_ObsCtxℂ :
 @[simp]
 def ctx_equiv (Γ : TEnv) (e₀ e₁: Expr) (τ : Ty) : Prop :=
   ctx_approx Γ e₀ e₁ τ ∧ ctx_approx Γ e₁ e₀ τ
+
+end Rec

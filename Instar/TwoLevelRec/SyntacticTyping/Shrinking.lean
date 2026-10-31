@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Typing
 
+namespace Rec
+
 lemma fvar.shrinking :
   ∀ (Ψ Δ : TEnv) Φ 𝕊 x τ,
     Δ.length ≠ x →
@@ -202,3 +204,5 @@ theorem typing.shrinking :
     apply IH
     apply typing.shrinking.singleton _ _ _ _ _ _ Hτ
     apply closed.inc; apply Hclosed; simp
+
+end Rec

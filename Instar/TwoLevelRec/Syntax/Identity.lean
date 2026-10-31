@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.LocallyNameless
 
+namespace Rec
+
 lemma identity.opening : ∀ e v i, lc_at e i → (opening i v e) = e :=
   by
   intros e v i Hlc
@@ -236,3 +238,5 @@ lemma identity.erase_codify : ∀ i e, ‖codify i e‖ = ‖e‖ :=
   | ifz₁ _ _ _ IH₀ IH₁ IH₂
   | ifz₂ _ _ _ IH₀ IH₁ IH₂ =>
     simp [IH₀, IH₁, IH₂]
+
+end Rec

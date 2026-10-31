@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.OperationalSemantics.SmallStep
 
+namespace Rec
+
 lemma step_grounded.congruence_under_ctx𝔹 : ∀ B e₀ e₁, ctx𝔹 B → grounded e₀ → (e₀ ⇝ e₁) → (B⟦e₀⟧ ⇝ B⟦e₁⟧) :=
   by
   intros B e₀ e₁ HB HG Hstep
@@ -110,3 +112,5 @@ lemma step.congruence_under_ctxℝ : ∀ intro lvl R e₀ e₁, ctxℝ intro lvl
       apply step_lvl.reflect
       apply ctxℙ.consℚ; apply ctxℚ.consℝ
       apply HR; apply HQ; apply HE; apply Hlc
+
+end Rec

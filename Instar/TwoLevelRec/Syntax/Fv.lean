@@ -1,6 +1,8 @@
 import Mathlib.Order.BooleanAlgebra.Set
 import Instar.TwoLevelRec.Syntax.Transform
 
+namespace Rec
+
 @[simp]
 def fv : Expr → Set ℕ
   | .bvar _ => ∅
@@ -65,6 +67,56 @@ lemma fv.under_opening : ∀ i v e, fv (opening i v e) ⊆ fv v ∪ fv e :=
     . apply Set.Subset.trans; apply IH₂
       apply Set.union_subset_union; rfl
       apply Set.subset_union_of_subset_right; rfl
+
+lemma mem_fv.under_opening :
+  ∀ x v i e,
+    x ∈ fv e →
+    x ∉ fv v →
+    x ∈ fv (opening i v e) :=
+  by
+  intros x v i e Hx Hnv
+  induction e generalizing i with
+  | bvar j
+  | lit => simp_all
+  | fvar z =>
+    by_cases HEq : z = x
+    . simp [HEq]
+    . simp at Hx; omega
+  | lam _ IH
+  | lam𝕔 _ IH =>
+    simp only [fv, opening]
+    exact IH (i + 1) Hx
+  | lift _ IH
+  | code _ IH
+  | reflect _ IH
+  | run _ IH
+  | fix₁ _ IH
+  | fix₂ _ IH =>
+    simp only [fv, opening]
+    exact IH i Hx
+  | app₁ _ _ IH₀ IH₁
+  | app₂ _ _ IH₀ IH₁
+  | binary₁ _ _ _ IH₀ IH₁
+  | binary₂ _ _ _ IH₀ IH₁ =>
+    simp only [fv, opening] at Hx ⊢
+    cases Hx
+    case inl H => left; exact IH₀ i H
+    case inr H => right; exact IH₁ i H
+  | lets _ _ IH₀ IH₁
+  | lets𝕔 _ _ IH₀ IH₁ =>
+    simp only [fv, opening] at Hx ⊢
+    cases Hx
+    case inl H => left; exact IH₀ i H
+    case inr H => right; exact IH₁ (i + 1) H
+  | ifz₁ _ _ _ IH₀ IH₁ IH₂
+  | ifz₂ _ _ _ IH₀ IH₁ IH₂ =>
+    simp only [fv, opening] at Hx ⊢
+    cases Hx
+    case inl H =>
+      cases H
+      case inl H => left; left; exact IH₀ i H
+      case inr H => left; right; exact IH₁ i H
+    case inr H => right; exact IH₂ i H
 
 lemma fv.under_closing : ∀ i x e, fv (closing i x e) = fv e \ { x } :=
   by
@@ -194,3 +246,5 @@ lemma not_in_fv.under_subst :
         apply IH₁; apply HIn
     case inr HIn =>
       apply IH₂; apply HIn
+
+end Rec

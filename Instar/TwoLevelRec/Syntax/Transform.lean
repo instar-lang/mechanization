@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.Syntax.Basic
 
+namespace Rec
+
 @[simp]
 def opening (i : ℕ) (v : Expr) : Expr → Expr
   | .bvar j => if j = i then v else .bvar j
@@ -245,3 +247,5 @@ lemma msubst.ifz₁ : ∀ γ c l r, msubst γ (.ifz₁ c l r) = .ifz₁ (msubst 
   induction γ generalizing c l r
   case nil => rfl
   case cons IH => simp [IH]
+
+end Rec

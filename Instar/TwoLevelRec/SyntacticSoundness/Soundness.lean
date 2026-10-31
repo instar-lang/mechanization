@@ -1,6 +1,8 @@
 import Instar.TwoLevelRec.SyntacticSoundness.Preservation
 import Instar.TwoLevelRec.SyntacticSoundness.Progress
 
+namespace Rec
+
 @[simp]
 def stuck (e₀ : Expr) : Prop :=
   ¬(∃ e₁, e₀ ⇝ e₁) ∧ ¬value e₀
@@ -19,3 +21,5 @@ theorem soundness :
     have ⟨_, Hstep⟩ := Hstep
     exfalso; apply HNorm _ Hstep
   | .inr Hvalue => apply Hvalue
+
+end Rec

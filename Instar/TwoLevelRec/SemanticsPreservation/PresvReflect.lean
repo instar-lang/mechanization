@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.LogicalEquiv.Defs
 
+namespace Rec
+
 lemma semantics_preservation.erase_ctx𝔼 :
   ∀ E Γ e τ φ k γ₀ γ₁,
     ctx𝔼 E →
@@ -470,3 +472,5 @@ theorem semantics_preservation.reflect.head :
         apply stepn_grounded.congruence_under_ctx𝔼 _ _ _ HE₁ (typing.dynamic_impl_grounded _ _ _ _ HSτb₁) HstepBind₁
       . apply log_approx_value.antimono
         apply Hsem_value; omega
+
+end Rec

@@ -1,5 +1,7 @@
 import Mathlib.Data.Nat.Basic
 
+namespace Rec
+
 inductive BinOp : Type where
   | add
   | mul
@@ -31,3 +33,5 @@ inductive Expr : Type where
   | fix₂ (e : Expr)
   | ifz₁ (c : Expr) (l : Expr) (r : Expr)
   | ifz₂ (c : Expr) (l : Expr) (r : Expr)
+
+end Rec

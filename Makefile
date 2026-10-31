@@ -12,4 +12,7 @@ mut:
 final:
 	lake build Instar.TwoLevelFinal.Defs
 
-all: basic rec mut final
+brack:
+	lake build Instar.TwoLevelRecBrack.Defs
+
+all: basic rec mut final brack

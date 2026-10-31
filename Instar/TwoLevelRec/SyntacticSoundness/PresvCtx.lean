@@ -1,5 +1,7 @@
 import Instar.TwoLevelRec.SyntacticTyping.Defs
 
+namespace Rec
+
 lemma preservation.under_ctx𝔹 :
   ∀ Γ B e₀ τ φ,
     ctx𝔹 B →
@@ -256,3 +258,5 @@ lemma preservation.under_ctx𝔼 :
     have Hτ := IHτB _ _ _ Hτ
     have HEqφ : φ ∪ (φ₁ ∪ φ₃) = φ ∪ φ₃ ∪ φ₁ := by cases φ₁ <;> cases φ₃ <;> simp
     rw [HEqφ]; apply Hτ
+
+end Rec
